@@ -1,0 +1,1 @@
+from we_com_sender.we_com_sender import WeComSender
