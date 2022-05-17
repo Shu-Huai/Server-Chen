@@ -1,0 +1,1 @@
+from pinger.pinger import Pinger
