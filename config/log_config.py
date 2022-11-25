@@ -1,2 +1,5 @@
+import os
+
+
 class LogConfig:
-    path: str = 'Z:/JetBrains PyCharm/Server-Chen/logs'
+    path: str = os.getcwd() + '\\logs'
