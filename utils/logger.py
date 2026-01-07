@@ -6,10 +6,11 @@ from config import LogConfig
 
 class Logger:
     logger: logger = logger
-    if not os.path.exists(LogConfig.path):
-        os.mkdir(LogConfig.path)
-    logger.add("{}/log_{}.log".format(LogConfig.path, time.strftime("%Y_%m_%d")), rotation="00:00", encoding="utf-8",
-               retention="300 days")
+    if LogConfig.path is not None:
+        if not os.path.exists(LogConfig.path):
+            os.mkdir(LogConfig.path)
+        logger.add("{}/log_{}.log".format(LogConfig.path, time.strftime("%Y_%m_%d")), rotation="00:00", encoding="utf-8",
+                retention="300 days")
 
     @staticmethod
     def info(message: str):
